@@ -1,19 +1,19 @@
 let expressionIdCounter = 0;
 let animalIdCounter = 0;
 
-export const getElementById = (id, elementList) => {
+const getElementById = (id, elementList) => {
   return elementList.find((element) => {
     return element.id === Number(id);
   });
 };
 
-export const getIndexById = (id, elementList) => {
+const getIndexById = (id, elementList) => {
   return elementList.findIndex((element) => {
     return element.id === Number(id);
   });
 };
 
-export const createElement = (elementType, queryArguments) => {
+const createElement = (elementType, queryArguments) => {
   if (
     queryArguments.hasOwnProperty("emoji") &&
     queryArguments.hasOwnProperty("name")
@@ -36,7 +36,7 @@ export const createElement = (elementType, queryArguments) => {
   }
 };
 
-export const updateElement = (id, queryArguments, elementList) => {
+const updateElement = (id, queryArguments, elementList) => {
   const elementIndex = getIndexById(id, elementList);
   if (elementIndex === -1) {
     throw new Error("updateElement must be called with a valid id parameter");
@@ -48,7 +48,7 @@ export const updateElement = (id, queryArguments, elementList) => {
   return elementList[elementIndex];
 };
 
-export const seedElements = (arr, type) => {
+const seedElements = (arr, type) => {
   if (type === "expressions") {
     arr.push(createElement("expressions", { emoji: "😀", name: "happy" }));
     arr.push(createElement("expressions", { emoji: "😎", name: "shades" }));
@@ -61,3 +61,5 @@ export const seedElements = (arr, type) => {
     throw new Error(`seed type must be either 'expression' or 'animal'`);
   }
 };
+
+export { getElementById, getIndexById, createElement, updateElement, seedElements }
