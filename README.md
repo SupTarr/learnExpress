@@ -6,8 +6,5 @@ Learn Express to GET, PUT, POST, DELETE from request.
 npm install 
 ```
 ```
-npm run route
-```
-```
-npm run router
+npm run dev
 ```

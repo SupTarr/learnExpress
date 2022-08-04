@@ -62,4 +62,10 @@ const seedElements = (arr, type) => {
   }
 };
 
-export { getElementById, getIndexById, createElement, updateElement, seedElements }
+module.exports = {
+  createElement: createElement,
+  getIndexById: getIndexById,
+  getElementById: getElementById,
+  updateElement: updateElement,
+  seedElements: seedElements,
+};
